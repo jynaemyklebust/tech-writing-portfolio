@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cimply — Scheduler Dashboard</title>
+<link rel="icon" href="../images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../images/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../images/favicon-180.png">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <div class="topbar">
+    <div class="brand">
+      <img src="../images/CimplyLogo_icon_badge.png" alt="Cimply">
+      Cimply
+    </div>
+    <div class="role-switch">Viewing as <strong>Scheduler</strong> · <a href="designer.html">Switch to Designer view</a></div>
+    <a class="back-link" href="../index.html">← Back to portfolio</a>
+  </div>
+
+  <div class="page-head">
+    <h1>Scheduler Dashboard</h1>
+    <p class="subhead">Elena Torres · Studio Ops — all active orders across the team</p>
+  </div>
+
+  <p class="mock-note">This is a static portfolio prototype. Designer and status filters work client-side; there's no backend, no order-creation flow, and no click-through to an order detail view — those are out of scope for this sample.</p>
+
+  <div class="stat-row">
+    <div class="stat-chip">
+      <span class="num" id="stat-active">–</span>
+      <span class="label">Active Orders</span>
+    </div>
+    <div class="stat-chip alert">
+      <span class="num" id="stat-pastdue">–</span>
+      <span class="label">Past Due</span>
+    </div>
+    <div class="stat-chip alert">
+      <span class="num" id="stat-latestart">–</span>
+      <span class="label">Late Start</span>
+    </div>
+    <div class="stat-chip">
+      <span class="num" id="stat-review">–</span>
+      <span class="label">Needs Review</span>
+    </div>
+  </div>
+
+  <div class="filter-row">
+    <div>
+      <label for="filter-designer">Designer</label>
+      <select id="filter-designer">
+        <option value="all">All designers</option>
+      </select>
+    </div>
+    <div>
+      <label for="filter-status">Status</label>
+      <select id="filter-status">
+        <option value="all">All statuses</option>
+      </select>
+    </div>
+    <span class="result-count" id="result-count"></span>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="dot" style="background:#6b7280"></span>New</span>
+    <span class="legend-item"><span class="dot" style="background:#2563eb"></span>Assigned</span>
+    <span class="legend-item"><span class="dot" style="background:#b8860b"></span>In Progress</span>
+    <span class="legend-item"><span class="dot" style="background:#c2410c"></span>On Hold</span>
+    <span class="legend-item"><span class="dot" style="background:#732eb5"></span>Needs Review</span>
+    <span class="legend-item"><span class="dot" style="background:#15803d"></span>Complete</span>
+    <span class="legend-item"><span class="dot" style="background:#b91c1c"></span>Cancelled</span>
+  </div>
+
+  <main>
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>Order</th>
+          <th>Assigned Designer</th>
+          <th>Status</th>
+          <th>Scheduled End</th>
+          <th>Flags</th>
+        </tr>
+      </thead>
+      <tbody id="order-tbody"></tbody>
+    </table>
+  </main>
+
+</div>
+
+<script src="../js/orders-data.js"></script>
+<script src="../js/scheduler.js"></script>
+</body>
+</html>
