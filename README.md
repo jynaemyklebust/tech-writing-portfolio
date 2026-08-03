@@ -9,7 +9,7 @@ A sample documentation set and working prototype built around **Cimply**, a fict
 
 ## Live demo
 
-_Coming soon_
+**[jynaemyklebust.github.io/tech-writing-portfolio](https://jynaemyklebust.github.io/tech-writing-portfolio/)**
 
 ## Contact
 
